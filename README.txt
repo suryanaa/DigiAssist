@@ -17,22 +17,78 @@
 *******************************************************************/
 
 Description of the project:
+
+DigiAssist is designed to digitally assist people who require health care 
+frequently. It can help reduce costs incurred by frequently visiting hospitals 
+or availing emergency services.
+
+It can be extended to facilitate assistance to nurses or health care professionals 
+who are in charge of the terminally ill or mentally ill.
+
+DigiAssist is a personlized digital health care assistant that can
+--collect measurements of health parameters automatically as well as manually. 
+  Some of the parameters include Weight, pain level, blood glucose level,blood pressure, temperature
+--Request information from the health care community via personalised patient forms 
+--Monitor and collect information from wearable devices connected by a Body area network,
+  WBAN (wireless body area network) or BSN (body sensor network)
+--Set up communication with a patients doctor or health care provider.
+--Set up a health Diary
+--Manage reminders and alerts to visit the doctor, refill prescription as well as keep track of medications dosage.
+--Manage a calendar to help with regular medication. For instance to keep track of
+  the next medical appointment, the next vaccination for a child.
+--Location Services including the closest hospitals, pharmacies and 24/7 pharmacies.
+
+Moreover, 
+--For the physically or mentally disabled additional assistance is available through the "Lost" assistant.
+--If the patient requires continuos or constant care, the app allows the user to set up
+	-- Separation Alert , when the patient and the care giver have been separated.
+	-- Perimeter Alert, when the patient goes outside an established perimeter.
+
+Intended Audience:
+
+This app is meant for those users who require health care assistance but not hospitalization. 
+i.e.,
+--Patients who have recently undergone a medical or surgical procedure
+--Elderly patients
+--patients with long term illness who opt for home based care
+--chronically ill patients 
+
+
 ---------------------------
 
-DISCLAIMER: This Application is built for educational/informational purposes							only and Author takes no responsibility for any of the content in the application
+DISCLAIMER: This Application is built for educational/informational purposes
+only and Author takes no responsibility for any of the content in the application
 and is no way responsible for any impact caused physically or otherwise to the end
 user. The developer assumes no liability for any consequences arising out of usage of software.
+This application does not substitute for professional medical advice and does not substitute for
+an in-person evaluation with a licensed health care provider. 
+It does not provide a definitive statement on the subject addressed. 
+For critical afflicitions, it is highly recommended that you consult your physician 
+or health care provider.
 
 Features of the project:
 ------------------------
 
 Currently working features of the application:
+	- Management of reminders and alarms for medical appointments, vaccinations, 
+	  useful addresses, medication regimens.
+ 	- Track patients symptoms, health status, etc.
+	- Keep track of location specific medical centers - pharmacies, hospitals etc..
+	- Monitor critical patients current location through GPS.
 
 
 Future Enhancements
-
+-------------------
  -User Interface enhancements.
- -Right now, application runs with dummy content, need to update remedy content.
+ -Replace certain dummy content with live content.
+ -Integrating the application with multiple biomedical sensors.
+ - online patient monitoring.
+ - Integrating insurance details to enable quick and easy funds transfer.
+
+Integration with Information Systems General of patients.
+Monitoring of hospital care in homes, mobile care, mobile / web of medication.
+Health care team through process monitoring
+
 
 NOTE: The application is still under testing phase so please let me know through email on email address 
 provided above if some feature from currently working list is not working for you.
