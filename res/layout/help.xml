@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="wrap_content"
+  android:layout_height="3dp"
+  android:background="@color/background">
+    <TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="15dp" android:textColor="#0000A0"
+android:gravity="center"
+android:paddingTop="10px"
+android:text="How to use the app
+*****************************"
+/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="12dp" android:textColor="#0000FF"
+android:gravity="left"
+android:text=" Speak or type the values of the temperature, blood pressure etc.If an invalid value is entered,  an error message is displayed. Enter a valid value and continue to the next field."/>
+
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="8px" 
+android:textSize="12dp" android:textColor="#0000FF"
+android:text="Use back and forward buttons to go back and modify any values. To save the recorded values, click on the save button. 
+To discard the values entered so far, click on the cancel button."/>
+
+ <TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="15dp" android:textColor="#0000A0"
+android:gravity="center"
+android:text="Glossary of Terms
+***********************************"/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="15dp" android:textColor="#0000A0"
+android:text="Pain Level:"/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="12dp" android:textColor="#0000FF"
+android:text="It is used to gauge the level of discomfort a patient is feeling. It is measured in a scae of 1 to 10."/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="15dp" android:textColor="#0000A0"
+android:text="Body temperature:"/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="12dp" android:textColor="#0000FF"
+android:text="It is a measure of the body's ability to generate and get rid of heat.Its one of most important indicators of health."/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="15dp" android:textColor="#0000A0"
+android:text="Blood pressure (BP):"/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="12dp" android:textColor="#0000FF"
+android:text="It is the pressure exerted by circulating blood upon the walls of blood vessels, and is one of the principal vital signs."/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="15dp" android:textColor="#0000A0"
+android:text="Respiratory Rate"/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="12dp" android:textColor="#0000FF"
+android:text="Human respiration rate is measured when a person is at rest and involves counting the number of breaths for one minute by counting how many times the chest rises. Respiration rates may increase with fever, illness, or other medical conditions. Inaccuracies in respiratory measurement have been reported in the literature. One study compared respiratory rate counted using a 90 second count period, to a full minute, and found significant differences in the rates.[citation needed] Another study found that rapid respiratory rates in babies, counted using a stethoscope."/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="15dp" android:textColor="#0000A0"
+android:text="Pulse rate:"/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="12dp" android:textColor="#0000FF"
+android:text="It is counted by putting slight pressure on any artery in the body where pulsations can be felt. The most convenient location is the wrist (radial pulse)."/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="15dp" android:textColor="#0000A0"
+android:text="Blood Glucose Level"/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="12dp" android:textColor="#0000FF"
+android:text="The human body naturally tightly regulates blood glucose levels as a part of metabolic homeostasis."/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="15dp" android:textColor="#0000A0"
+android:text="Oxygen saturation"/>
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="12dp" android:textColor="#0000FF"
+android:text="Oxygen saturation or dissolved oxygen (DO) is a relative measure of the amount of oxygen that is dissolved or carried in a given medium."/>
+<TextView android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="15dp" android:textColor="#0000A0"
+android:gravity="center"
+android:text= "Contact Developers"/>
+
+<TextView
+android:id="@+id/Help"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="8px" 
+android:textSize="12dp" android:textColor="#0000FF"
+android:text="Use one or more of these email addresses to report a problem and/or provide feedback about the application.
+      ssaijpaul@pdx.edu
+      hsatija@pdx.edu
+      asuryanarayan@pdx.edu"/>
+</LinearLayout>
+</ScrollView>

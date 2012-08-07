@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutMain"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:gravity="fill" >
+
+<RelativeLayout android:id="@+id/headerLayout" android:layout_height="wrap_content" 
+				android:padding="8dip" android:paddingBottom="8dip" android:paddingLeft="8dip" android:paddingRight="8dip" 
+				android:paddingTop="8dip" android:layout_width="wrap_content" android:layout_alignParentTop="true">
+
+<TableLayout
+    android:id="@+id/tableLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_alignParentTop="true"
+    >
+ 
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+   
+      <ImageView
+  	  android:id="@+id/imageHealth"
+	  android:layout_width="50dip"
+	  android:layout_height="50dip" android:src="@drawable/images" android:layout_alignParentLeft="true"
+	  />
+  
+        <TextView
+            android:id="@+id/textView1"
+            android:text="TakeCare Health Systems"
+            android:paddingTop="14px"
+            android:textSize="18dp" android:textColor="#000066"
+            android:typeface="serif" android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+ 
+        
+    </TableRow>
+</TableLayout>    
+
+</RelativeLayout>
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingTop="7px">
+
+<TableLayout
+    android:id="@+id/tableLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"  >
+ 
+       <!-- 2 columns -->
+    
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_height="wrap_content"
+        android:paddingTop="160px"
+        android:layout_width="wrap_content"
+        
+        >
+        <TextView android:layout_marginLeft="50px" 
+            android:textAppearance="?android:attr/textAppearanceSmall" android:text="Patient ID : " 
+            android:textSize="15dp" android:textColor="#000066" android:typeface="serif" android:textStyle="bold"
+            android:id="@+id/textView3"></TextView>
+
+        <EditText
+            android:id="@+id/PatientID"
+             android:textColor="#6C7B8B" 
+            
+            android:text="Eg: 2345"
+            android:height="10dip"
+            android:width="110dip"
+            android:textSize="15dp" 
+            
+            >
+
+            <requestFocus />
+        </EditText>
+ 
+    </TableRow>
+ </TableLayout>
+       
+    <TextView android:layout_marginTop="25px" 
+        android:textAppearance="?android:attr/textAppearanceLarge" android:text="OR" android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:paddingLeft="200px"
+        android:textColor="#000066"
+        android:layout_marginBottom="25px"
+        ></TextView>
+  
+    
+ 
+ <!-- 2 columns -->
+<TableLayout
+    android:id="@+id/tableLayout3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"  >
+
+    <TableRow
+        android:id="@+id/tableRow3">
+ 
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_marginLeft="10px"
+            android:text="Patient Name : "
+            
+            android:textSize="15dp" android:textColor="#000066" android:typeface="serif" android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+ 
+        <EditText
+            android:id="@+id/NameText"
+ android:textSize="15dp"
+ android:textColor="#6C7B8B" 
+ android:width="150dip"
+ android:height="30dip"
+            android:text="Eg : John Smith" />
+ 
+        </TableRow>
+    </TableLayout>
+
+<TableLayout
+    android:id="@+id/tableLayout4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"  >
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_height="wrap_content"
+        >
+ 
+ <TextView
+            android:id="@+id/textView5"
+            android:text="Birth Date : "
+            android:layout_marginLeft="45px"
+            android:layout_marginTop="30px"
+            android:textSize="15dp" android:textColor="#000066" android:typeface="serif" android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+ 
+	 
+ 	<EditText
+            android:id="@+id/DateText"
+ 			android:textSize="15dp"
+ 			 android:textColor="#6C7B8B" 
+ 			
+ 			android:text="mm/dd/yyyy"
+ 			android:width="130dip"
+ 			android:height="2dip" 
+ 			android:layout_marginTop="30px"
+ 			/>
+
+ 	<ImageView
+      android:layout_marginLeft="5px"
+  	  android:id="@+id/imageCalendar"
+	  android:layout_width="50dip"
+	  android:layout_height="50dip" android:layout_marginTop="25px" 
+	  android:src="@drawable/calendar" android:layout_alignParentLeft="true" />
+ 	
+    </TableRow>
+   
+ </TableLayout>
+ <!--
+  <DatePicker
+              android:startYear="1900"
+              android:endYear="2100"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="5dp"
+android:layout_marginLeft="10px"
+
+   ></DatePicker>
+ 
+ -->
+ <Button 
+            android:id="@+id/savebutton"
+            android:layout_marginLeft="215px"
+            android:layout_height="50dip"
+        	android:layout_width="wrap_content" android:textColor="#000066"
+        	android:textSize="14dp" android:typeface="serif" android:textStyle="bold"
+        	android:text="Submit" 
+        	android:layout_marginTop="30px"/>
+</LinearLayout>
+
+<RelativeLayout android:id="@+id/headerLayout" android:layout_height="wrap_content"  
+				android:paddingLeft="8dip" android:paddingRight="8dip"  android:paddingBottom="2dip"
+				android:layout_width="wrap_content"  android:layout_alignParentBottom="true"
+				 >
+<View
+		android:layout_width="3dp"
+		android:layout_height="3dp"
+		android:background="@android:color/white"
+/> 
+    <!-- 3 columns -->
+    <ImageView
+              android:layout_marginLeft="375px"
+  	  android:id="@+id/imageHelp"
+	  android:layout_width="40dip"
+	  android:layout_height="40dip" android:src="@drawable/helpb" android:layout_alignParentLeft="true"
+	  android:layout_marginTop="8px" 
+	  />
+        
+<!--          <Button
+            android:id="@+id/ExitButton"
+            android:layout_height="50dip"
+        	android:layout_width="wrap_content"
+        	android:layout_alignParentRight="true" android:textColor="#000066"
+        	android:textSize="14dp" android:typeface="serif" android:textStyle="bold"
+            android:text="Exit" 
+            android:layout_marginTop="8px"/>
+-->
+ </RelativeLayout>
+</RelativeLayout>

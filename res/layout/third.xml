@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+				android:id="@+id/relativeLayoutMain" android:layout_width="fill_parent" 
+				android:layout_height="fill_parent" android:gravity="fill"
+				android:background="@color/background">
+
+<RelativeLayout android:id="@+id/headerLayout" android:layout_height="wrap_content" 
+				android:padding="8dip" android:paddingBottom="8dip" android:paddingLeft="8dip" android:paddingRight="8dip" 
+				android:layout_width="wrap_content" android:layout_alignParentTop="true">
+<TableLayout
+    android:id="@+id/tableLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_alignParentTop="true"
+    >
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+	   <ImageView
+  	  android:id="@+id/imageHealth"
+	  android:layout_width="50dip"
+	  android:layout_height="50dip" android:src="@drawable/images" android:layout_alignParentLeft="true"
+	  />
+	    <TextView
+	     android:id="@+id/maintextView1"
+	     android:text="Medical Measurements"
+	     android:textSize="20dp" android:textColor="#000066"
+	     android:typeface="serif" android:textStyle="bold"
+	     android:textAppearance="?android:attr/textAppearanceMedium" 
+	     android:paddingLeft="15px"
+	     android:paddingTop="0px"/>        
+    </TableRow>
+</TableLayout>
+<TableLayout
+    android:id="@+id/tableLayout6"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_alignParentTop="true"
+    android:paddingTop="50px"
+    >
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+ 
+        <TextView
+            android:id="@+id/PatientNamefirst"
+            android:text="Name of Patient: "
+            android:textSize="15dp" android:textColor="#000066"
+	        android:typeface="serif" android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:paddingTop="15px"
+           
+            />
+        
+        <TextView
+            android:id="@+id/textView20"
+            android:text="Ms. Luis(ID:4567)"
+            android:textSize="15dp" android:textColor="#000000"
+	        android:typeface="serif" android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:paddingTop="25px"
+            android:paddingLeft="2px"
+            />
+        
+ </TableRow>
+</TableLayout>    
+
+</RelativeLayout>
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingTop="20px"
+    >
+<TableLayout
+    android:id="@+id/tableLayout2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="15px"
+    >
+
+ <!-- 2 columns -->
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:paddingTop="85px"
+        
+      >
+ 
+        <TextView
+            android:id="@+id/textView5"
+            android:text="Resp Rate:"
+            android:textSize="15dp" android:textColor="#000066"
+	        android:typeface="serif" android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:paddingLeft="5px"
+            android:paddingRight="10px"
+            android:gravity="right"
+            
+             />
+ 
+        <EditText
+            android:id="@+id/respText"
+            android:text="16" 
+            android:layout_width="80dp"
+            android:layout_height="40dip"
+            android:textSize="15px"
+            
+
+            />
+ 
+        <TextView
+           android:id="@+id/textView6"
+            android:text="bpm"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="15dp" android:textColor="#000000"
+            android:textStyle="bold"
+            android:paddingLeft="6dip"
+            android:paddingRight="10dip"
+             />
+             
+            <Button android:layout_height="25dip" 
+            android:layout_width="25dip"  
+            android:background="@drawable/helpb" 
+            android:layout_toLeftOf="@+id/textView6" 
+            android:gravity="center"></Button>
+     </TableRow>
+ </TableLayout>
+ 
+ <TableLayout
+    android:id="@+id/tableLayouttemp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_alignParentTop="true"
+    >
+   <TableRow 
+        android:id="@+id/tableRow5"
+        android:layout_height="wrap_content">
+       <TextView
+           android:id="@+id/Dummy"
+            android:text="" 
+            android:textColor="#FF0000"
+            android:textStyle="italic"
+            android:paddingRight="90px" />
+       <TextView
+           android:id="@+id/errorRespTextView"
+            android:text="Normal range: 12-18bpm" 
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="14dp" 
+            android:textStyle="italic"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+           
+ 
+    </TableRow>
+         <TableRow 
+        android:id="@+id/tableRowA"
+        android:layout_height="wrap_content">
+       <TextView
+           android:id="@+id/errorRespTextView1"
+            android:text="" 
+            android:textColor="#FF0000"
+            android:textStyle="italic"
+            android:paddingLeft="5px" />
+           
+ 
+    </TableRow>
+        
+      
+</TableLayout>
+
+
+<TableLayout
+    android:id="@+id/tableLayoutTemp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_alignParentTop="true"
+    >
+
+        <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_height="wrap_content"
+        android:layout_width = "wrap_content"
+        android:paddingTop="20px"
+        
+      >
+ 
+        <TextView
+            android:id="@+id/textView5"
+            android:text="Pulse Rate :"
+            android:textSize="15dp" android:textColor="#000066"
+	        android:typeface="serif" android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:paddingLeft="5px"
+            android:paddingRight="20px"
+             />
+ 
+        <EditText
+            android:id="@+id/pulText"
+            android:text="50" 
+            android:layout_width="80dip"
+            android:layout_height="40dip"
+            android:textSize="15dp"
+            android:numeric="integer|decimal"
+            />
+			
+             <TextView
+           android:id="@+id/textView6"
+            android:text="mm Hg"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="15dp" android:textColor="#000000"
+            android:textStyle="bold"
+            android:paddingLeft="4px"
+             android:paddingRight="4px"
+             />
+           <Button android:layout_height="25dip" 
+            android:layout_width="25dip"  
+            android:background="@drawable/helpb" 
+            android:layout_toLeftOf="@+id/textView6" 
+            android:gravity="center"></Button>
+    </TableRow>
+    </TableLayout>
+<TableLayout
+    android:id="@+id/tableLayouttrial"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_alignParentTop="true"
+    >
+    <TableRow 
+        android:id="@+id/tableRow5"
+        android:layout_height="wrap_content">
+       <TextView
+           android:id="@+id/Dummy"
+            android:text="" 
+            android:textColor="#FF0000"
+            android:textStyle="italic"
+            android:paddingRight="90px" />
+            <TextView
+           android:id="@+id/errorPulTextView"
+            android:text="Normal range:60-100 bpm" 
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="14dp" 
+            android:textStyle="italic"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </TableRow>
+    <TableRow 
+        android:id="@+id/tableRow5"
+        android:layout_height="wrap_content">
+       <TextView
+           android:id="@+id/Dummy"
+            android:text="" 
+            android:textColor="#FF0000"
+            android:textStyle="italic"
+            android:paddingRight="25dip" />
+            <TextView
+           android:id="@+id/errorPulTextView1"
+            android:text="" 
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="14dp" 
+            android:textStyle="italic"
+            android:textColor="#FF0000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </TableRow>     
+      
+   
+   
+</TableLayout>
+
+   
+   
+   
+
+
+</LinearLayout>
+<RelativeLayout android:id="@+id/headerLayout" android:layout_height="wrap_content"  
+				android:layout_width="wrap_content"
+				 >
+
+    
+</RelativeLayout>
+<TableLayout android:id="@+id/headerLayout" android:layout_height="wrap_content"  
+				android:layout_width="wrap_content"
+				 >
+				 <TableRow 
+        android:id="@+id/tableRow5"
+        android:layout_height="wrap_content">
+<Button 
+            android:id="@+id/saveexitButton"
+            android:layout_marginLeft="125px"
+            android:layout_height="40dip"
+        	android:layout_width="wrap_content" android:textColor="#000066"
+        	android:textSize="14dp" android:typeface="serif" android:textStyle="bold"
+        	android:text="Save" 
+        	
+        	android:layout_marginTop="280px"/>
+<Button 
+            android:id="@+id/saveanotherButton"
+            android:layout_marginLeft="25px"
+            android:layout_height="40dip"
+            	android:layout_width="wrap_content" android:textColor="#000066"
+        	android:textSize="14dp" android:typeface="serif" android:textStyle="bold"
+        	android:text="Cancel" 
+        	android:layout_marginTop="280px"/>
+        	   	/>
+        	   	</TableRow>
+    
+</TableLayout>
+<RelativeLayout android:id="@+id/headerLayout" android:layout_height="wrap_content"  
+				android:paddingLeft="8dip" android:paddingRight="8dip"  android:paddingBottom="2dip"
+				android:layout_width="wrap_content"  android:layout_alignParentBottom="true"
+				 >
+<View
+		android:layout_width="3dp"
+		android:layout_height="3dp"
+		
+		android:id="@+id/view1"/> 
+    <!-- 3 columns -->
+    <Button 
+  	  android:id="@+id/arrowback2"
+	  android:layout_width="35dp"
+	  android:layout_height="35dp" android:background="@drawable/arrowback" android:layout_alignParentLeft="true"
+	  android:layout_marginTop="8px" 
+	  />
+	 <Button
+  	  android:id="@+id/arrowfront2"
+	  android:layout_width="35dip"
+	  android:layout_height="35dip" android:background="@drawable/arrow" android:layout_alignParentRight="true"
+	  android:layout_marginTop="8px" 
+	  />
+	 	 <ImageView android:src="@drawable/home2" android:layout_height="35dip"  
+ 	 android:layout_width="35dip" android:id="@+id/imageHome"  
+ 	 android:layout_below="@+id/view1" 
+ 	 android:layout_toLeftOf="@+id/arrowfront2"  
+ 	 android:layout_marginRight="84dp"></ImageView>
+ </RelativeLayout>
+</RelativeLayout>
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  -->
+<!-- 				android:id="@+id/relativeLayoutMain" android:layout_width="fill_parent"  -->
+<!-- 				android:layout_height="fill_parent" android:gravity="fill" -->
+<!-- 				android:background="@color/background"> -->
+
+<!-- <RelativeLayout android:id="@+id/headerLayout" android:layout_height="wrap_content"  -->
+<!-- 				android:padding="8dip" android:paddingBottom="8dip" android:paddingLeft="8dip" android:paddingRight="8dip"  -->
+<!-- 				android:layout_width="wrap_content" android:layout_alignParentTop="true"> -->
+<!-- <TableLayout -->
+<!--     android:id="@+id/tableLayout1" -->
+<!--     android:layout_width="wrap_content" -->
+<!--     android:layout_height="wrap_content"  -->
+<!--     android:layout_alignParentTop="true" -->
+<!--     > -->
+<!--     <TableRow -->
+<!--         android:id="@+id/tableRow1" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         > -->
+	  
+<!-- 	    <TextView -->
+<!-- 	     android:id="@+id/textView1" -->
+<!-- 	     android:text="Medical Measurements" -->
+<!-- 	     android:textSize="20dp" android:textColor="#000066" -->
+<!-- 	     android:typeface="serif" android:textStyle="bold" -->
+<!-- 	     android:textAppearance="?android:attr/textAppearanceMedium"  -->
+<!-- 	     android:paddingLeft="45px" -->
+<!-- 	     android:paddingTop="0px"/>        -->
+<!--     </TableRow> -->
+<!--     </TableLayout> -->
+<!--     <TableLayout -->
+<!--     android:id="@+id/tableLayout6" -->
+<!--     android:layout_width="wrap_content" -->
+<!--     android:layout_height="wrap_content"  -->
+<!--     android:layout_alignParentTop="true" -->
+<!--     android:paddingTop="20px" -->
+<!--     > -->
+<!--     <TableRow -->
+<!--         android:id="@+id/tableRow2" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         > -->
+ 
+<!--         <TextView -->
+<!--             android:id="@+id/PatientNamefirst" -->
+<!--             android:text="Name of Patient: " -->
+<!--             android:textSize="15dp" android:textColor="#000066" -->
+<!-- 	        android:typeface="serif" android:textStyle="bold" -->
+<!--             android:textAppearance="?android:attr/textAppearanceMedium"  -->
+<!--             android:paddingTop="15px" -->
+           
+<!--             /> -->
+        
+<!--         <TextView -->
+<!--             android:id="@+id/textView20" -->
+<!--             android:text="Ms. Luis(ID:4567)" -->
+<!--             android:textSize="15dp" android:textColor="#000000" -->
+<!-- 	        android:typeface="serif" android:textStyle="bold" -->
+<!--             android:textAppearance="?android:attr/textAppearanceMedium"  -->
+<!--             android:paddingTop="25px" -->
+<!--             android:paddingLeft="2px" -->
+<!--             /> -->
+        
+
+<!--         <TextView -->
+<!--             android:id="@+id/textView2" -->
+<!--             android:text="BCD EDE" -->
+<!--             android:layout_marginRight="30px" -->
+<!--             android:textSize="16dp" android:textColor="000000" -->
+<!-- 	        android:typeface="serif" android:textStyle="bold" -->
+<!--             android:textAppearance="?android:attr/textAppearanceLarge"  -->
+<!--             android:paddingTop="15px"/> -->
+<!--     </TableRow> -->
+
+<!-- </TableLayout> -->
+
+<!-- </RelativeLayout> -->
+<!-- <LinearLayout  -->
+<!--     android:layout_width="fill_parent" -->
+<!--     android:layout_height="fill_parent" -->
+<!--     android:orientation="vertical" -->
+<!--     android:paddingTop="7px" -->
+<!--     > -->
+
+<!-- <TableLayout -->
+<!--     android:id="@+id/tableLayout" -->
+<!--     android:layout_width="wrap_content" -->
+<!--     android:layout_height="wrap_content" -->
+<!--     android:orientation="vertical" -->
+<!--     android:paddingTop="15px" -->
+<!--     > -->
+
+
+<!--     <TableRow -->
+<!--         android:id="@+id/tableRow1" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:paddingTop="20px" -->
+        
+<!--       > -->
+ 
+<!--         <TextView -->
+<!--             android:id="@+id/textView5" -->
+<!--             android:text="Respiratory Rate:" -->
+<!--             android:textSize="15dp" android:textColor="#000066" -->
+<!-- 	        android:typeface="serif" android:textStyle="bold" -->
+<!--             android:textAppearance="?android:attr/textAppearanceMedium" -->
+<!--             android:paddingLeft="5px" -->
+            
+<!--              /> -->
+ 
+<!--         <EditText -->
+<!--             android:id="@+id/respText" -->
+<!--             android:text="16"  -->
+<!--             android:layout_width="70dip" -->
+<!--             android:layout_height="40dip" -->
+<!--             android:textSize="15dp" -->
+<!--             android:numeric="integer|decimal" -->
+<!--             /> -->
+ 
+<!--         <TextView -->
+<!--            android:id="@+id/textView6" -->
+<!--             android:text="beats/min" -->
+<!--             android:textAppearance="?android:attr/textAppearanceSmall" -->
+<!--             android:textSize="15dp" android:textColor="#000000" -->
+<!--             android:textStyle="bold" -->
+<!--             android:paddingLeft="6px" -->
+<!--              /> -->
+<!--      </TableRow> -->
+     
+<!--    <TableRow  -->
+<!--         android:id="@+id/tableRow5" -->
+<!--         android:layout_height="wrap_content"> -->
+<!--        <TextView -->
+<!--            android:id="@+id/textViewDummy1" -->
+<!--             android:text=""  -->
+<!--             android:paddingLeft="10px" /> -->
+<!--        <TextView -->
+<!--             android:id="@+id/textView14" -->
+<!--             android:text="Normal range is between" -->
+<!--             android:textAppearance="?android:attr/textAppearanceSmall" -->
+<!--             android:textSize="14dp"  -->
+<!--             android:textStyle="italic" -->
+<!--             android:textColor="#000000" -->
+<!--             /> -->
+ 
+<!--     </TableRow> -->
+<!--     <TableRow  -->
+<!--         android:id="@+id/tableRow6" -->
+<!--         android:layout_height="wrap_content"> -->
+<!--        <TextView -->
+<!--            android:id="@+id/textViewDummy1" -->
+<!--             android:text=""  -->
+<!--             android:paddingLeft="10px" /> -->
+<!--        <TextView -->
+<!--             android:id="@+id/textView14" -->
+<!--             android:text="12-18 Beats per minute" -->
+<!--             android:textAppearance="?android:attr/textAppearanceSmall" -->
+<!--             android:textSize="14dp"  -->
+<!--             android:textStyle="italic" -->
+<!--             android:textColor="#000000" -->
+<!--             /> -->
+ 
+<!--     </TableRow> -->
+<!-- </TableLayout> -->
+<!--        <TextView -->
+<!--            android:id="@+id/errorRespTextView" -->
+<!--             android:text=""  -->
+<!--             android:textAppearance="?android:attr/textAppearanceSmall" -->
+<!--             android:textSize="14dp"  -->
+<!--             android:textStyle="italic" -->
+<!--             android:textColor="#FF6600" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             /> -->
+
+<!-- <TableLayout -->
+<!--     android:id="@+id/tableLayout2" -->
+<!--     android:layout_width="wrap_content" -->
+<!--     android:layout_height="wrap_content" -->
+<!--     android:orientation="vertical" -->
+<!--     android:paddingTop="15px" -->
+<!--     > -->
+
+
+<!--     <TableRow -->
+<!--         android:id="@+id/tableRow2" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:paddingTop="20px" -->
+        
+<!--       > -->
+ 
+<!--         <TextView -->
+<!--             android:id="@+id/textView5" -->
+<!--             android:text="Pulse Rate:" -->
+<!--             android:textSize="15dp" android:textColor="#000066" -->
+<!-- 	        android:typeface="serif" android:textStyle="bold" -->
+<!--             android:textAppearance="?android:attr/textAppearanceMedium" -->
+<!--             android:paddingLeft="5px" -->
+            
+<!--              /> -->
+ 
+<!--         <EditText -->
+<!--             android:id="@+id/pulText" -->
+<!--             android:text="65"  -->
+<!--             android:layout_width="70dip" -->
+<!--             android:layout_height="40dip" -->
+<!--             android:textSize="15dp" -->
+<!--             android:numeric="integer|decimal" -->
+<!--             /> -->
+ 
+<!--         <TextView -->
+<!--            android:id="@+id/textView6" -->
+<!--             android:text="beats/min" -->
+<!--             android:textAppearance="?android:attr/textAppearanceSmall" -->
+<!--             android:textSize="15dp" android:textColor="#000000" -->
+<!--             android:textStyle="bold" -->
+<!--             android:paddingLeft="6px" -->
+<!--              /> -->
+<!--      </TableRow> -->
+     
+<!--    <TableRow  -->
+<!--         android:id="@+id/tableRow5" -->
+<!--         android:layout_height="wrap_content"> -->
+<!--        <TextView -->
+<!--            android:id="@+id/textViewDummy1" -->
+<!--             android:text=""  -->
+<!--             android:paddingLeft="10px" /> -->
+<!--        <TextView -->
+<!--             android:id="@+id/textView14" -->
+<!--             android:text="Normal range is between" -->
+<!--             android:textAppearance="?android:attr/textAppearanceSmall" -->
+<!--             android:textSize="14dp"  -->
+<!--             android:textStyle="italic" -->
+<!--             android:textColor="#000000" -->
+<!--             /> -->
+ 
+<!--     </TableRow> -->
+<!--     <TableRow  -->
+<!--         android:id="@+id/tableRow6" -->
+<!--         android:layout_height="wrap_content"> -->
+<!--        <TextView -->
+<!--            android:id="@+id/textViewDummy1" -->
+<!--             android:text=""  -->
+<!--             android:paddingLeft="10px" /> -->
+<!--        <TextView -->
+<!--             android:id="@+id/textView14" -->
+<!--             android:text="60-100 Beats per mintue" -->
+<!--             android:textAppearance="?android:attr/textAppearanceSmall" -->
+<!--             android:textSize="14dp"  -->
+<!--             android:textStyle="italic" -->
+<!--             android:textColor="#000000" -->
+<!--             /> -->
+ 
+<!--     </TableRow> -->
+<!-- </TableLayout> -->
+<!--        <TextView -->
+<!--            android:id="@+id/errorPulTextView" -->
+<!--             android:text=""  -->
+<!--             android:textAppearance="?android:attr/textAppearanceSmall" -->
+<!--             android:textSize="14dp"  -->
+<!--             android:textStyle="italic" -->
+<!--             android:textColor="#FF6600" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             /> -->
+
+
+<!-- </LinearLayout> -->
+<!-- <RelativeLayout android:id="@+id/headerLayout" android:layout_height="wrap_content"   -->
+<!-- 				android:layout_width="wrap_content" -->
+<!-- 				 > -->
+<!-- <Button  -->
+<!--             android:id="@+id/saveexitButton" -->
+<!--             android:layout_marginLeft="25px" -->
+<!--             android:layout_height="40dip" -->
+<!--         	android:layout_width="wrap_content" android:textColor="#000066" -->
+<!--         	android:textSize="14dp" android:typeface="serif" android:textStyle="bold" -->
+<!--         	android:text="Save and Exit"  -->
+        	
+<!--         	android:layout_marginTop="280px"/> -->
+<!-- <Button  -->
+<!--             android:id="@+id/saveanotherButton" -->
+<!--             android:layout_marginLeft="25px" -->
+<!--             android:layout_height="40dip" -->
+<!--         	android:layout_width="wrap_content" android:textColor="#000066" -->
+<!--         	android:textSize="14dp" android:typeface="serif" android:textStyle="bold" -->
+<!--         	android:text="Save and Another Patient"  -->
+        	
+<!--         	android:layout_marginTop="330px"/> -->
+    
+<!-- </RelativeLayout> -->
+<!-- <RelativeLayout android:id="@+id/headerLayout" android:layout_height="wrap_content"   -->
+<!-- 				android:paddingLeft="8dip" android:paddingRight="8dip"  android:paddingBottom="2dip" -->
+<!-- 				android:layout_width="wrap_content"  android:layout_alignParentBottom="true" -->
+<!-- 				 > -->
+<!-- <View -->
+<!-- 		android:layout_width="match_parent" -->
+<!-- 		android:layout_height="3dp" -->
+<!-- 		android:background="@android:color/white" -->
+<!-- 		/>  -->
+<!--     <ImageView -->
+<!--   	  android:id="@+id/imageHelp" -->
+<!-- 	  android:layout_width="50dip" -->
+<!-- 	  android:layout_height="50dip" android:src="@drawable/helpb" android:layout_alignParentLeft="true" -->
+<!-- 	  android:layout_marginTop="8px"  -->
+<!-- 	  /> -->
+    
+        
+<!--         <ImageView -->
+<!-- 	  	android:id="@+id/imageHome" -->
+<!-- 		android:layout_width="50dip" -->
+<!-- 		android:layout_height="50dip"  -->
+<!-- 		android:src="@drawable/home2" android:layout_centerHorizontal="true" -->
+<!-- 		android:layout_marginTop="8px" -->
+	
+<!-- 		  /> -->
+<!--  </RelativeLayout> -->
+<!-- </RelativeLayout> -->
