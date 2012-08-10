@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/ViewCalender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="38dp"
+        android:contentDescription="@string/view_reminders"
+        android:src="@drawable/calendar_icon" />
+
+    <ImageView
+        android:id="@+id/add_reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/ViewCalender"
+        android:layout_marginRight="36dp"
+        android:contentDescription="@string/add_reminder"
+        android:src="@drawable/add_reminder" />
+
+    <ImageView
+        android:id="@+id/list_medication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/ViewCalender"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/ViewCalender"
+        android:layout_marginLeft="32dp"
+        android:clickable="false"
+        android:contentDescription="@string/list_medication"
+        android:onClick="@string/submen_control_lista"
+        android:paddingTop="@dimen/padding_large"
+        android:src="@drawable/img_amoxicilina" />
+
+</RelativeLayout>
