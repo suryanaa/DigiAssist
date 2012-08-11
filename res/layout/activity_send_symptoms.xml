@@ -1,15 +1,35 @@
+<!-- 
+Copyright(c) 2012 Anitha Suryanarayan 
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Author: Anitha Suryanarayan
+feedback: anitha@pdx.edu
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollviewsymptoms"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:padding="@dimen/padding_medium"
-        android:text="@string/symptoms"
+        android:text="@string/selectSymptoms"
         tools:context=".SendSymptomsActivity" />
 
     <CheckBox
@@ -26,7 +46,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
         android:layout_toRightOf="@+id/chkBoxNausea"
         android:layout_marginTop="19dp"
         android:text="@string/fever" />
@@ -47,7 +66,7 @@
         android:layout_alignTop="@+id/chkBoxHeadache"
        	android:layout_toRightOf="@+id/chkBoxHeadache"
 		android:text="@string/dizzy" />
-<!--    
+    
     <CheckBox
         android:id="@+id/chkBoxCough"
         android:layout_width="wrap_content"
@@ -61,10 +80,11 @@
         android:id="@+id/chkBoxSore_Throat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/chkBoxCough"
         android:layout_toRightOf="@+id/chkBoxCough"
-        android:layout_marginTop="19dp"
         android:text="@string/soreThroat" />
-     
+    
+      
       <CheckBox
         android:id="@+id/chkBoxNasalCongestion"
         android:layout_width="wrap_content"
@@ -78,8 +98,8 @@
         android:id="@+id/chkBoxSneezing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/chkBoxNasalCongestion"
-        android:layout_marginTop="19dp"
+        android:layout_alignTop="@+id/chkBoxNasalCongestion"
+       	android:layout_toRightOf="@+id/chkBoxNasalCongestion"
         android:text="@string/sneezing" />
       
       <CheckBox
@@ -95,8 +115,8 @@
         android:id="@+id/chkBoxAllergicReaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/chkBoxRunny_nose"
         android:layout_toRightOf="@+id/chkBoxRunny_nose"
-        android:layout_marginTop="19dp"
         android:text="@string/allergicReaction" />
       
     <CheckBox
@@ -112,8 +132,8 @@
         android:id="@+id/chkBoxDepressed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/chkBoxDiarrhea"
         android:layout_toRightOf="@+id/chkBoxDiarrhea"
-        android:layout_marginTop="19dp"
         android:text="@string/depressed" />
     
     <CheckBox
@@ -129,8 +149,8 @@
         android:id="@+id/chkBoxWeightGain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/chkBoxWeightLoss"
         android:layout_toRightOf="@+id/chkBoxWeightLoss"
-        android:layout_marginTop="19dp"
         android:text="@string/weightGain" />
     
     <CheckBox
@@ -138,8 +158,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/chkBoxWeightLoss"
         android:layout_marginTop="19dp"
         android:text="@string/other" />
-      --> 
+       
 </RelativeLayout>
+</ScrollView>
