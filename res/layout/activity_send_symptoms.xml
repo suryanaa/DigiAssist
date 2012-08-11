@@ -1,0 +1,145 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/padding_medium"
+        android:text="@string/symptoms"
+        tools:context=".SendSymptomsActivity" />
+
+    <CheckBox
+        android:id="@+id/chkBoxNausea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="19dp"
+        android:text="@string/nausea" />
+
+    <CheckBox
+        android:id="@+id/chkBoxFever"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/chkBoxNausea"
+        android:layout_marginTop="19dp"
+        android:text="@string/fever" />
+
+    <CheckBox
+        android:id="@+id/chkBoxHeadache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/chkBoxNausea"
+        android:layout_marginTop="19dp"
+        android:text="@string/headache" />
+    
+    <CheckBox
+        android:id="@+id/chkBoxDizzy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/chkBoxHeadache"
+       	android:layout_toRightOf="@+id/chkBoxHeadache"
+		android:text="@string/dizzy" />
+<!--    
+    <CheckBox
+        android:id="@+id/chkBoxCough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/chkBoxHeadache"
+        android:layout_marginTop="19dp"
+        android:text="@string/cough" />
+     
+      <CheckBox
+        android:id="@+id/chkBoxSore_Throat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/chkBoxCough"
+        android:layout_marginTop="19dp"
+        android:text="@string/soreThroat" />
+     
+      <CheckBox
+        android:id="@+id/chkBoxNasalCongestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/chkBoxCough"
+        android:layout_marginTop="19dp"
+        android:text="@string/nasalCongestion" />
+      
+      <CheckBox
+        android:id="@+id/chkBoxSneezing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/chkBoxNasalCongestion"
+        android:layout_marginTop="19dp"
+        android:text="@string/sneezing" />
+      
+      <CheckBox
+        android:id="@+id/chkBoxRunny_nose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/chkBoxNasalCongestion"
+        android:layout_marginTop="19dp"
+        android:text="@string/runny_nose" />
+      
+    <CheckBox
+        android:id="@+id/chkBoxAllergicReaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/chkBoxRunny_nose"
+        android:layout_marginTop="19dp"
+        android:text="@string/allergicReaction" />
+      
+    <CheckBox
+        android:id="@+id/chkBoxDiarrhea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/chkBoxRunny_nose"
+        android:layout_marginTop="19dp"
+        android:text="@string/diarrhea" />
+      
+    <CheckBox
+        android:id="@+id/chkBoxDepressed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/chkBoxDiarrhea"
+        android:layout_marginTop="19dp"
+        android:text="@string/depressed" />
+    
+    <CheckBox
+        android:id="@+id/chkBoxWeightLoss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+       android:layout_below="@+id/chkBoxDiarrhea"
+        android:layout_marginTop="19dp"
+        android:text="@string/weightLoss" />
+    
+    <CheckBox
+        android:id="@+id/chkBoxWeightGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/chkBoxWeightLoss"
+        android:layout_marginTop="19dp"
+        android:text="@string/weightGain" />
+    
+    <CheckBox
+        android:id="@+id/chkBoxOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="19dp"
+        android:text="@string/other" />
+      --> 
+</RelativeLayout>

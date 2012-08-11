@@ -29,13 +29,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/ViewCalender"
-        android:layout_alignParentRight="true"
         android:layout_below="@id/ViewCalender"
-        android:layout_marginLeft="32dp"
         android:clickable="false"
         android:contentDescription="@string/list_medication"
-        android:onClick="@string/submen_control_lista"
         android:paddingTop="@dimen/padding_large"
         android:src="@drawable/img_amoxicilina" />
+    
+    <ImageView
+        android:id="@+id/send_symptoms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/list_medication"
+        android:clickable="false"
+        android:contentDescription="@string/symptoms"
+        android:paddingTop="@dimen/padding_large"
+        android:src="@drawable/symptoms" />
 
 </RelativeLayout>
