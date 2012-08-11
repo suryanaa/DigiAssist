@@ -18,31 +18,28 @@
 
 Description of the project:
 
-DigiAssist is designed to digitally assist people who require health care 
-frequently. It can help reduce costs incurred by frequently visiting hospitals 
+DigiAssist is designed to digitally assist people who require frequent medication. 
+This application can help users monitor their medicaal regimen as well as their vital statistics. 
+This can help physicians understand the patients health status better and enable them to take steps to control diseases as well as prevent costly exacerbations.
+
+Moreover, by aggregating this voluntarily-shared data about symptoms, it is possible to improve 
+management and understanding of diseases. 
+With this kind of information/statistic, scientists and public health agencies can design new medication 
+that reduces the burden on patients.
+Patients also benefit since they reduce costs incurred by frequently visiting hospitals 
 or availing emergency services.
 
-It can be extended to facilitate assistance to nurses or health care professionals 
+This application can be extended to facilitate assistance to nurses or health care professionals 
 who are in charge of the terminally ill or mentally ill.
 
 DigiAssist is a personlized digital health care assistant that can
---collect measurements of health parameters automatically as well as manually. 
+--collect measurements of health parameters . 
   Some of the parameters include Weight, pain level, blood glucose level,blood pressure, temperature
 --Request information from the health care community via personalised patient forms 
---Monitor and collect information from wearable devices connected by a Body area network,
-  WBAN (wireless body area network) or BSN (body sensor network)
---Set up communication with a patients doctor or health care provider.
---Set up a health Diary
---Manage reminders and alerts to visit the doctor, refill prescription as well as keep track of medications dosage.
---Manage a calendar to help with regular medication. For instance to keep track of
-  the next medical appointment, the next vaccination for a child.
---Location Services including the closest hospitals, pharmacies and 24/7 pharmacies.
-
-Moreover, 
---For the physically or mentally disabled additional assistance is available through the "Lost" assistant.
---If the patient requires continuos or constant care, the app allows the user to set up
-	-- Separation Alert , when the patient and the care giver have been separated.
-	-- Perimeter Alert, when the patient goes outside an established perimeter.
+--Set up a health log/diary
+--Manage reminders and alerts to refill prescription as well as keep track of medications dosage.
+--Manage a calendar to help with regular medication. 
+--Provide access to details of medication 
 
 Intended Audience:
 
@@ -56,7 +53,10 @@ i.e.,
 
 ---------------------------
 
-DISCLAIMER: This Application is built for educational/informational purposes
+DISCLAIMER: This Application does not endorse or affirm the validity of the medical content 
+contained in the medical sites. This application has not been regulated or reviewed by medical bodies. 
+When making medical decisions use your own clinical judgment.
+This application is built for educational/informational purposes
 only and Author takes no responsibility for any of the content in the application
 and is no way responsible for any impact caused physically or otherwise to the end
 user. The developer assumes no liability for any consequences arising out of usage of software.
@@ -70,11 +70,10 @@ Features of the project:
 ------------------------
 
 Currently working features of the application:
-	- Management of reminders and alarms for medical appointments, vaccinations, 
-	  useful addresses, medication regimens.
+	- Management of reminders and alarms for medication
  	- Track patients symptoms, health status, etc.
-	- Keep track of location specific medical centers - pharmacies, hospitals etc..
-	- Monitor critical patients current location through GPS.
+	- Keep track of medication supply
+	- Maintain log of vital statistics.
 
 
 Future Enhancements
