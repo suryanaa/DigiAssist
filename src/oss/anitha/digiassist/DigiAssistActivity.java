@@ -76,6 +76,47 @@ public class DigiAssistActivity extends Activity {
 						Constants.COMMAND_SEND_SYMPTOMS);
 			}
 		});
+        
+        ImageView imgMedicationSupplies = (ImageView) findViewById(R.id.medication_supplies);
+        imgMedicationSupplies.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				speak(getString(R.string.medication_supplies));
+				DigiAssistActivity.this.startActivityForResult(
+						new Intent(DigiAssistActivity.this, MedicationSupplyActivity.class), 
+						Constants.COMMAND_MEDICATION_SUPPLIES);
+			}
+		});
+        
+        ImageView imgMedicationLog = (ImageView) findViewById(R.id.medication_log);
+        imgMedicationLog.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				speak(getString(R.string.medication_log));
+				DigiAssistActivity.this.startActivityForResult(
+						new Intent(DigiAssistActivity.this, MedicationLogActivity.class), 
+						Constants.COMMAND_MEDICATION_LOG);
+			}
+		});
+        
+        ImageView imgSettings = (ImageView) findViewById(R.id.settings);
+        imgSettings.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				speak(getString(R.string.settings));
+				DigiAssistActivity.this.startActivityForResult(
+						new Intent(DigiAssistActivity.this, DigiAssistSettingsActivity.class), 
+						Constants.COMMAND_VIEW_SETTINGS);
+			}
+		});
+        
+        ImageView imgHelp = (ImageView) findViewById(R.id.help);
+        imgHelp.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				speak(getString(R.string.help));
+				DigiAssistActivity.this.startActivityForResult(
+						new Intent(DigiAssistActivity.this, DigiAssistHelpActivity.class), 
+						Constants.COMMAND_VIEW_HELP);
+			}
+		});
+        
         Intent checkIntent = new Intent();
         checkIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
         startActivityForResult(checkIntent, Constants.COMMAND_CHECK_TTS_AVAILABILITY);

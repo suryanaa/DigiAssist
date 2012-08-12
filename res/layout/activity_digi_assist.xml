@@ -59,10 +59,56 @@ feedback: anitha@pdx.edu
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/list_medication"
+        android:layout_alignTop="@+id/list_medication"
+        android:layout_toRightOf="@+id/list_medication"
         android:clickable="false"
         android:contentDescription="@string/symptoms"
         android:paddingTop="@dimen/padding_large"
         android:src="@drawable/symptoms" />
 
+    <ImageView
+        android:id="@+id/medication_supplies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/ViewCalender"
+        android:layout_below="@+id/list_medication"
+        android:clickable="false"
+        android:contentDescription="@string/medication_supplies"
+        android:paddingTop="@dimen/padding_large"
+        android:src="@drawable/supplies" />
+    
+    <ImageView
+        android:id="@+id/medication_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/medication_supplies"
+        android:layout_toRightOf="@+id/medication_supplies"
+        android:clickable="false"
+        android:contentDescription="@string/medication_supplies"
+        android:paddingTop="@dimen/padding_large"
+        android:src="@drawable/log" />
+    
+    <ImageView
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/ViewCalender"
+        android:layout_below="@+id/medication_supplies"
+        android:clickable="false"
+        android:contentDescription="@string/settings"
+        android:paddingTop="@dimen/padding_large"
+        android:src="@drawable/settings" />
+    
+    <ImageView
+        android:id="@+id/help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/settings"
+        android:layout_toRightOf="@+id/settings"
+        android:clickable="false"
+        android:contentDescription="@string/help"
+        android:paddingTop="@dimen/padding_large"
+        android:src="@drawable/help" />
 </RelativeLayout>

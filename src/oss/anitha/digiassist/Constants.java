@@ -32,4 +32,10 @@ public class Constants {
 	  static final int COMMAND_VIEW_CALENDAR = 3;
 	  static final int COMMAND_SEND_SYMPTOMS = 4;
 	  static final int COMMAND_TRIGGER_ALARM = 5;
+	  static final int COMMAND_MEDICATION_SUPPLIES = 6;
+	  static final int COMMAND_MEDICATION_LOG = 7;
+	  static final int COMMAND_MEDICAL_STATISTICS = 8;
+	  static final int COMMAND_VIEW_SETTINGS = 9;
+	  static final int COMMAND_VIEW_HELP = 10;
+
 }

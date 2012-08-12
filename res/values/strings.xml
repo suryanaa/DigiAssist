@@ -1,4 +1,4 @@
-<!-- 
+<!--
 Copyright(c) 2012 Anitha Suryanarayan 
 
 This program is free software: you can redistribute it and/or modify
@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Author: Anitha Suryanarayan
-feedback: anitha@pdx.edu
+feedback: anitha@pdx.edu
 -->
 
 <resources>
@@ -39,7 +39,6 @@ feedback: anitha@pdx.edu
     <string name="save">SAVE</string>
     <string name="cancel">CANCEL</string>
     <string name="list_medication">List All Current Medication Details</string>
-    
     <string name="symptoms">Symptoms</string>
     <string name="selectSymptoms">Select all that apply</string>
     <string name="cough">Cough</string>
@@ -59,9 +58,7 @@ feedback: anitha@pdx.edu
     <string name="other">Other</string>
     <string name="details">More Details</string>
     <string name="sendToDoc">Send to my doctor</string>
-    
-    
-    
+
     <string-array name="medication_frequency_num">
         <item>1</item>
         <item>2</item>
@@ -90,5 +87,22 @@ feedback: anitha@pdx.edu
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_view_calendar">ViewCalendarActivity</string>
     <string name="title_activity_send_symptoms">SendSymptomsActivity</string>
+    <string name="title_activity_medication_supply">MedicationSupplyActivity</string>
+    <string name="medication_supplies">Medication Supplies</string>
+    <string name="settings">DigiAssist Settings</string>
+    <string name="help">Help</string>
+    <string name="medication_log">Medication Log</string>
+    <string name="title_activity_medication_log">MedicationLogActivity</string>
+    <string name="title_activity_digi_assist_settings">DigiAssistSettingsActivity</string>
+    <string name="title_activity_digi_assist_help">DigiAssistHelpActivity</string>
 
+    <string name="pulse_rate">Pulse Rate : </string>
+    <string name="pain_level">Pain Level : </string>
+    <string name="resp_rate">Respiratory Rate : </string>
+    <string name="blood_pressure">Blood Pressure : </string>
+    <string name="oxygen_saturation">Oxygen Saturation : </string>
+    <string name="blood_glucose">Blood Glucose : </string>
+    <string name="body_temp">Temperature : </string>
+    
+    
 </resources>
