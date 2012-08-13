@@ -18,6 +18,9 @@
 package oss.anitha.digiassist;
 
 import java.util.Calendar;
+import java.util.Iterator;
+import java.util.Map;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -25,6 +28,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -71,15 +75,14 @@ public class AddReminderActivity extends Activity {
  			public void onClick(View v) {
  		        // Display data from store
  		        SharedPreferences sp = getSharedPreferences(Constants.DATA_STORE, 0);
- 		        String medName = sp.getString(Constants.KEY_MEDICATION_NAME, Constants.KEY_MEDICATION_NAME);
- 		        String medDosage = sp.getString(Constants.KEY_MEDICATION_DOSAGE, Constants.KEY_MEDICATION_DOSAGE);
- 		        String startDate = sp.getString(Constants.KEY_START_DATE, Constants.KEY_START_DATE);
- 		        String endDate = sp.getString(Constants.KEY_END_DATE, Constants.KEY_END_DATE);
- 		        String startTime = sp.getString(Constants.KEY_START_TIME, Constants.KEY_START_TIME);
- 		        String endTime = sp.getString(Constants.KEY_END_TIME, Constants.KEY_END_TIME);
- 		        Toast.makeText(AddReminderActivity.this, medName + "," + medDosage +  
- 		        		"," + startDate + "," + endDate + "," + startTime + "," + endTime,
- 		        		Toast.LENGTH_LONG).show();
+ 		        Map<String, ?> reminders = sp.getAll();
+ 		        for(Map.Entry<String, ?> entry : reminders.entrySet()) {
+ 		        	String id = entry.getKey();
+ 		        	String record = (String) entry.getValue();
+ 		        	Log.i(TAG, "Key: " + id);
+ 		        	Log.i(TAG, "Value: " + record);
+ 		        	Toast.makeText(AddReminderActivity.this, record, Toast.LENGTH_LONG).show();
+ 		        }
  			}
         });
     }
@@ -98,6 +101,10 @@ public class AddReminderActivity extends Activity {
     	int startMin = tpStartTime.getCurrentMinute();
     	int endHour = tpEndTime.getCurrentHour();
     	int endMin = tpEndTime.getCurrentMinute();
+    	MedicationReminder record = new MedicationReminder(medicationName, medicationDosage, 
+    			startDay, startMonth, startYear, startHour, startMin, 
+    			endDay, endMonth, endYear, endHour, endMin, 1, "Day");
+    	
     	
     	// Setup alarm
     	// Figure out the time to trigger the alarm
@@ -113,21 +120,12 @@ public class AddReminderActivity extends Activity {
     	i.putExtra(Constants.KEY_MEDICATION_DOSAGE, medicationDosage);
     	PendingIntent pi = PendingIntent.getBroadcast(this, Constants.COMMAND_TRIGGER_ALARM, i, PendingIntent.FLAG_UPDATE_CURRENT);
     	AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-    	alarm.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pi);
+    	//alarm.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pi);
 
     	// Store form data for later viewing
     	SharedPreferences sp = getSharedPreferences(Constants.DATA_STORE, 0);
     	SharedPreferences.Editor editor = sp.edit();
-    	editor.putString(Constants.KEY_MEDICATION_NAME, medicationName);
-    	editor.putString(Constants.KEY_MEDICATION_DOSAGE, medicationDosage);
-    	String startDate = startMonth + "/" + startDay + "/" + startYear;
-    	editor.putString(Constants.KEY_START_DATE, startDate);
-    	String endDate = endMonth + "/" + endDay + "/" + endYear;
-    	editor.putString(Constants.KEY_END_DATE, endDate);
-    	String startTime = startHour + ":" + startMin;
-    	editor.putString(Constants.KEY_START_TIME, startTime);
-        String endTime = endHour + ":" + endMin;
-    	editor.putString(Constants.KEY_END_TIME, endTime);
+    	editor.putString(record.getId(), record.toString());
     	editor.commit();
     }
     

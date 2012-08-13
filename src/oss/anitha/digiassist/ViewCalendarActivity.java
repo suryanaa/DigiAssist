@@ -20,15 +20,21 @@ package oss.anitha.digiassist;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
+import android.widget.ListView;
 
 public class ViewCalendarActivity extends Activity {
 
+	private ListView listView;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_calendar);
+        listView = (ListView) findViewById(R.id.reminderList);
+        
+        ReminderListAdapter adapter = new ReminderListAdapter(this, 
+        		R.layout.reminder_list_row);
+        listView.setAdapter(adapter);
     }
 
     @Override
@@ -36,6 +42,4 @@ public class ViewCalendarActivity extends Activity {
         getMenuInflater().inflate(R.menu.activity_view_calendar, menu);
         return true;
     }
-
-    
 }

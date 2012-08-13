@@ -88,7 +88,7 @@ feedback: anitha@pdx.edu
             </intent-filter>
         </activity>
         <activity
-            android:name=".MedicationLogActivity"
+            android:name=".HealthLogActivity"
             android:label="@string/title_activity_medication_log" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

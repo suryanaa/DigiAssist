@@ -92,7 +92,7 @@ public class DigiAssistActivity extends Activity {
 			public void onClick(View v) {
 				speak(getString(R.string.medication_log));
 				DigiAssistActivity.this.startActivityForResult(
-						new Intent(DigiAssistActivity.this, MedicationLogActivity.class), 
+						new Intent(DigiAssistActivity.this, HealthLogActivity.class), 
 						Constants.COMMAND_MEDICATION_LOG);
 			}
 		});

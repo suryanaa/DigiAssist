@@ -36,8 +36,8 @@ feedback: anitha@pdx.edu
     <string name="medication_end_time">End Time</string>
     <string name="select">For more info, click on the Drug Name</string>
     <string name="view_reminders">View Medication Reminders</string>
-    <string name="save">SAVE</string>
-    <string name="cancel">CANCEL</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
     <string name="list_medication">List All Current Medication Details</string>
     <string name="symptoms">Symptoms</string>
     <string name="selectSymptoms">Select all that apply</string>
@@ -58,7 +58,13 @@ feedback: anitha@pdx.edu
     <string name="other">Other</string>
     <string name="details">More Details</string>
     <string name="sendToDoc">Send to my doctor</string>
-
+    <string name="view_label_medicine">Medicine:</string>
+    <string name="view_label_dosage">Dosage:</string>
+    <string name="view_label_start">Start Time:</string>
+    <string name="view_label_end">End Time:</string>
+    <string name="view_label_recurrence">Recurrence:</string>
+    <string name="view_label_delete">Delete</string>
+    
     <string-array name="medication_frequency_num">
         <item>1</item>
         <item>2</item>

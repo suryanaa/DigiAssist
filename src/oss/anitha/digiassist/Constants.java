@@ -38,4 +38,18 @@ public class Constants {
 	  static final int COMMAND_VIEW_SETTINGS = 9;
 	  static final int COMMAND_VIEW_HELP = 10;
 
+	  static final String STATS_STORE = "VITAL_STATISTICS";
+	  static final String KEY_PAIN_LEVEL = "PainLevel";
+	  static final String KEY_TEMPERATURE = "Temperature";
+	  static final String KEY_BLOOD_GLUCOSE = "BloodGlucose";
+	  static final String KEY_PULSE_RATE = "PulseRate";
+	  static final String KEY_RESP_RATE = "RespiratoryRate";
+	  static final String KEY_OXY_SAT = "OxygenSaturation";
+	  static final String KEY_SYS_BP = "SysBP";
+	  static final String KEY_DIA_BP = "DiaBP";
+	  
+	  
+		 
+		 
+
 }
