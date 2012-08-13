@@ -27,22 +27,6 @@
             android:layout_below="@+id/tvDosage"
             android:text="@string/view_label_start" />
         
-        <TextView
-            android:id="@+id/tvEndTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/tvStartTime"
-            android:text="@string/view_label_end" />
-        
-        <TextView
-            android:id="@+id/tvFrequency"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/tvEndTime"
-            android:text="@string/view_label_recurrence" />
-
         <Button
             android:id="@+id/btnDeleteReminder"
             style="?android:attr/buttonStyleSmall"

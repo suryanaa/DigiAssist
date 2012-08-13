@@ -1,9 +1,11 @@
 package oss.anitha.digiassist;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Map;
+import java.util.TimeZone;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -45,8 +47,6 @@ public class ReminderListAdapter extends ArrayAdapter<MedicationReminder> {
 			holder.name = (TextView) row.findViewById(R.id.tvName);
 			holder.dosage = (TextView) row.findViewById(R.id.tvDosage);
 			holder.startTime = (TextView) row.findViewById(R.id.tvStartTime);
-			holder.endTime = (TextView) row.findViewById(R.id.tvEndTime);
-			holder.frequency = (TextView) row.findViewById(R.id.tvFrequency);
 			holder.deleteBtn = (Button) row.findViewById(R.id.btnDeleteReminder);
 			row.setTag(holder);
 		}
@@ -63,11 +63,7 @@ public class ReminderListAdapter extends ArrayAdapter<MedicationReminder> {
 		holder.dosage.setText(context.getString(R.string.view_label_dosage) + 
 				" " + reminder.dosage);
 		holder.startTime.setText(context.getString(R.string.view_label_start) + 
-				" " + reminder.getStartDateTime());
-		holder.endTime.setText(context.getString(R.string.view_label_end) + 
-				" " + reminder.getEndDateTime());
-		holder.frequency.setText(context.getString(R.string.view_label_recurrence) + 
-				" " + reminder.getRecurrence());
+				" " + reminder.getStartTime());
 	    final int pos = position;
 		holder.deleteBtn.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
@@ -85,7 +81,12 @@ public class ReminderListAdapter extends ArrayAdapter<MedicationReminder> {
         	String id = entry.getKey();
         	String record = (String) entry.getValue();
         	MedicationReminder reminder = new MedicationReminder(id, record);
-        	array.add(reminder);
+        	Calendar c = Calendar.getInstance(TimeZone.getTimeZone("PST"));
+        	if(c.get(Calendar.YEAR) == reminder.startDateTime.get(Calendar.YEAR) &&
+        			c.get(Calendar.MONTH) == reminder.startDateTime.get(Calendar.MONTH)	&&
+        			c.get(Calendar.DAY_OF_MONTH) == reminder.startDateTime.get(Calendar.DAY_OF_MONTH)) {
+            	array.add(reminder);
+        	}
         }
         Collections.sort(array, new Sorter());
         return array;
@@ -116,8 +117,6 @@ public class ReminderListAdapter extends ArrayAdapter<MedicationReminder> {
 		TextView name;
 		TextView dosage;
 		TextView startTime;
-		TextView endTime;
-		TextView frequency;
 		Button deleteBtn;
 	}
 	

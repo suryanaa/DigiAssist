@@ -161,6 +161,35 @@ feedback: anitha@pdx.edu
         android:layout_below="@+id/chkBoxWeightLoss"
         android:layout_marginTop="19dp"
         android:text="@string/other" />
+    
+    <EditText
+            android:id="@+id/otherDetails"
+            android:layout_width="wrap_content"
+       		android:layout_height="wrap_content"
+       		android:layout_alignTop="@+id/chkBoxOther"
+       		android:layout_toRightOf="@+id/chkBoxOther"
+            android:inputType="text" />
+        <requestFocus />
+
+    
+    <Button 
+	  	android:id="@+id/buttonSendToDoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chkBoxOther"
+        android:paddingTop="10dp"
+        android:text="@string/sendToDoc"
+        android:onClick="sendEmailToDoc" /> 
        
+    <Button 
+	  	android:id="@+id/buttonCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/buttonSendToDoc"
+        android:layout_toRightOf="@+id/buttonSendToDoc"
+        android:paddingTop="10dp"
+        android:text="@string/cancel"
+        android:onClick="refreshScreen" /> 
+        
 </RelativeLayout>
 </ScrollView>

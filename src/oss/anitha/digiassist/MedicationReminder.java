@@ -11,6 +11,7 @@ public class MedicationReminder {
 	private static final String SEPARATOR = ";";
 	private static final String ID_PREFIX = "Reminder";
 	private SimpleDateFormat dateFormatter = new SimpleDateFormat("MM-dd-yyyy HH:mm");
+	private SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm");
 
 	String id;
 	String name;
@@ -21,7 +22,9 @@ public class MedicationReminder {
 	String frequencyUnit;
 	
 	private String strStartDateTime;
+	private String strStartTime;
 	private String strEndDateTime;
+	private String strEndTime;
 
 	private MedicationReminder() {
 		TimeZone.setDefault(TimeZone.getTimeZone("PST"));
@@ -52,6 +55,8 @@ public class MedicationReminder {
 		
 		strStartDateTime = dateFormatter.format(startDateTime.getTime());
 		strEndDateTime = dateFormatter.format(endDateTime.getTime());
+		strStartTime = timeFormatter.format(startDateTime.getTime());
+		strEndTime = timeFormatter.format(endDateTime.getTime());
 	}
 	
 	public MedicationReminder(String id, String record) {
@@ -76,6 +81,8 @@ public class MedicationReminder {
 
 		strStartDateTime = dateFormatter.format(startDateTime.getTime());
 		strEndDateTime = dateFormatter.format(endDateTime.getTime());
+		strStartTime = timeFormatter.format(startDateTime.getTime());
+		strEndTime = timeFormatter.format(endDateTime.getTime());
 	}
 	
 	public String getId() {
@@ -90,6 +97,14 @@ public class MedicationReminder {
 		return strEndDateTime;
 	}
 	
+	public String getStartTime() {
+		return strStartTime;
+	}
+	
+	public String getEndTime() {
+		return strEndTime;
+	}
+
 	public String getRecurrence() {
 		return frequency + " " + frequencyUnit;
 	}
