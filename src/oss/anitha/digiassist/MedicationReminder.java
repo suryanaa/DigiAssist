@@ -26,29 +26,23 @@ public class MedicationReminder {
 	private String strEndDateTime;
 	private String strEndTime;
 
-	private MedicationReminder() {
-		TimeZone.setDefault(TimeZone.getTimeZone("PST"));
-		dateFormatter.setTimeZone(TimeZone.getTimeZone("PST"));
-	}
-	
 	public MedicationReminder(String name, String dosage, int startDay, int startMonth, int startYear,
 			int startHour, int startMin, int endDay, int endMonth, int endYear, int endHour, int endMin,
 			int freq, String freqUnit) {
-		this();
 		this.id = ID_PREFIX + System.currentTimeMillis();
 		this.name = name;
 		this.dosage = dosage;
-		this.startDateTime = Calendar.getInstance(TimeZone.getTimeZone("PST"));
+		this.startDateTime = Calendar.getInstance();
     	startDateTime.set(Calendar.YEAR, startYear);
     	startDateTime.set(Calendar.MONTH, startMonth);
     	startDateTime.set(Calendar.DAY_OF_MONTH, startDay);
-    	startDateTime.set(Calendar.HOUR, startHour);
+    	startDateTime.set(Calendar.HOUR_OF_DAY, startHour);
     	startDateTime.set(Calendar.MINUTE, startMin);
-		this.endDateTime = Calendar.getInstance(TimeZone.getTimeZone("PST"));
+		this.endDateTime = Calendar.getInstance();
 		endDateTime.set(Calendar.YEAR, endYear);
 		endDateTime.set(Calendar.MONTH, endMonth);
 		endDateTime.set(Calendar.DAY_OF_MONTH, endDay);
-		endDateTime.set(Calendar.HOUR, endHour);
+		endDateTime.set(Calendar.HOUR_OF_DAY, endHour);
 		endDateTime.set(Calendar.MINUTE, endMin);
 		this.frequency = freq;
 		this.frequencyUnit = freqUnit;
@@ -60,7 +54,6 @@ public class MedicationReminder {
 	}
 	
 	public MedicationReminder(String id, String record) {
-		this();
 		String[] tokens = record.split(SEPARATOR);
 		if(tokens.length != 6) {
 			throw new IllegalArgumentException("Record not in the right format: " + record);
@@ -68,9 +61,9 @@ public class MedicationReminder {
 		name = tokens[0];
 		dosage = tokens[1];
 		try {
-			this.startDateTime = Calendar.getInstance(TimeZone.getTimeZone("PST"));
+			this.startDateTime = Calendar.getInstance();
 			startDateTime.setTime(dateFormatter.parse(tokens[2]));
-			this.endDateTime = Calendar.getInstance(TimeZone.getTimeZone("PST"));
+			this.endDateTime = Calendar.getInstance();
 			endDateTime.setTime(dateFormatter.parse(tokens[3]));
 		} catch (ParseException e) {
 			throw new IllegalArgumentException("Could not parse record: " + record);

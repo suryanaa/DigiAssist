@@ -15,7 +15,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Author: Anitha Suryanarayan
-feedback: anitha@pdx.edu-->
+feedback: anitha@pdx.edu
+-->
 
 <resources>
 
@@ -63,6 +64,10 @@ feedback: anitha@pdx.edu-->
     <string name="view_label_end">End Time:</string>
     <string name="view_label_recurrence">Recurrence:</string>
     <string name="view_label_delete">Delete</string>
+    <string name="label_reminder">Reminder</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="time_for_med">Time for your medicine</string>
+    <string name="dosage_is">The dosage is</string>
     
     <string-array name="medication_frequency_num">
         <item>1</item>
@@ -102,8 +107,6 @@ feedback: anitha@pdx.edu-->
     <string name="title_activity_digi_assist_help">Help</string>
     <string name="sendEmailToDoc">Send Email To My Doctor</string>
     <string name="otherDetails">Details</string>
-    
-    
     <string name="pulse_rate">Pulse Rate : </string>
     <string name="pain_level">Pain Level : </string>
     <string name="resp_rate">Respiratory Rate : </string>
@@ -111,6 +114,6 @@ feedback: anitha@pdx.edu-->
     <string name="oxygen_saturation">Oxygen Saturation : </string>
     <string name="blood_glucose">Blood Glucose : </string>
     <string name="body_temp">Temperature : </string>
-    
-    
+    <string name="title_activity_alarm_receiver">AlarmReceiverActivity</string>
+
 </resources>

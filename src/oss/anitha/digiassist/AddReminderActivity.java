@@ -18,8 +18,8 @@
 package oss.anitha.digiassist;
 
 import java.util.Calendar;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -28,22 +28,21 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 public class AddReminderActivity extends Activity {
 
-	  private static final String TAG = "AddReminderActivity";
 	  private Button btnSave, btnCancel;
 	  private EditText txtMedicationName, txtMedicationDosage;
 	  private DatePicker dpStartDate, dpEndDate;
 	  private TimePicker tpStartTime, tpEndTime;
+	  private Spinner spinFreq, spinFreqUnit;
 	  
 /*	  SharedPreferences reminderData = this.getSharedPreferences(
 		      "testReminderData", Context.MODE_PRIVATE);
@@ -55,36 +54,36 @@ public class AddReminderActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_reminder);
+        Calendar c = Calendar.getInstance();
         btnSave = (Button) findViewById(R.id.buttonSave);
         btnCancel = (Button) findViewById(R.id.buttonCancel);
         txtMedicationName = (EditText) findViewById(R.id.textMedicationName);
         txtMedicationDosage = (EditText) findViewById(R.id.textMedicationDosage);
         dpStartDate = (DatePicker) findViewById(R.id.startDatePicker);
+        dpStartDate.init(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH), null);
         dpEndDate = (DatePicker) findViewById(R.id.endDatePicker);
+        Calendar tmp = Calendar.getInstance();
+        tmp.add(Calendar.DAY_OF_MONTH, 1);
+        dpEndDate.init(c.get(Calendar.YEAR), c.get(Calendar.MONTH), tmp.get(Calendar.DAY_OF_MONTH), null);
         tpStartTime = (TimePicker) findViewById(R.id.startTimePicker);        
         tpEndTime = (TimePicker) findViewById(R.id.endTimePicker);
+        spinFreq = (Spinner) findViewById(R.id.spinnerRepeatNum);
+        spinFreq.setSelection(0);
+        spinFreqUnit = (Spinner) findViewById(R.id.spinnerRepeatUnit);  
+        spinFreqUnit.setSelection(0);
+
         tpStartTime.setIs24HourView(true);
+        tpStartTime.setCurrentHour(c.get(Calendar.HOUR_OF_DAY));
+        tpStartTime.setCurrentMinute(c.get(Calendar.MINUTE));
         tpEndTime.setIs24HourView(true);
+        tpEndTime.setCurrentHour(c.get(Calendar.HOUR_OF_DAY));
+        tpEndTime.setCurrentMinute(c.get(Calendar.MINUTE));
         
         btnSave.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				AddReminderActivity.this.saveFormData();				
 			}
 		});
-        btnCancel.setOnClickListener(new View.OnClickListener() {
- 			public void onClick(View v) {
- 		        // Display data from store
- 		        SharedPreferences sp = getSharedPreferences(Constants.DATA_STORE, 0);
- 		        Map<String, ?> reminders = sp.getAll();
- 		        for(Map.Entry<String, ?> entry : reminders.entrySet()) {
- 		        	String id = entry.getKey();
- 		        	String record = (String) entry.getValue();
- 		        	Log.i(TAG, "Key: " + id);
- 		        	Log.i(TAG, "Value: " + record);
- 		        	Toast.makeText(AddReminderActivity.this, record, Toast.LENGTH_LONG).show();
- 		        }
- 			}
-        });
     }
     
     private void saveFormData() {
@@ -101,26 +100,39 @@ public class AddReminderActivity extends Activity {
     	int startMin = tpStartTime.getCurrentMinute();
     	int endHour = tpEndTime.getCurrentHour();
     	int endMin = tpEndTime.getCurrentMinute();
+    	String freqList[] = getResources().getStringArray(R.array.medication_frequency_num);
+    	String freqUnitList[] = getResources().getStringArray(R.array.medication_frequency_unit);
+    	int freq = Integer.parseInt(freqList[spinFreq.getSelectedItemPosition()]);
+    	String freqUnit = freqUnitList[spinFreq.getSelectedItemPosition()];
     	MedicationReminder record = new MedicationReminder(medicationName, medicationDosage, 
     			startDay, startMonth, startYear, startHour, startMin, 
-    			endDay, endMonth, endYear, endHour, endMin, 1, "Day");
-    	
+    			endDay, endMonth, endYear, endHour, endMin, freq, freqUnit);
     	
     	// Setup alarm
     	// Figure out the time to trigger the alarm
-    	Calendar cal = Calendar.getInstance();
-    	cal.set(Calendar.YEAR, startYear);
-    	cal.set(Calendar.MONTH, startMonth);
-    	cal.set(Calendar.DAY_OF_MONTH, startDay);
-    	cal.set(Calendar.HOUR, startHour);
-    	cal.set(Calendar.MINUTE, startMin);
     	// Create an intent and populate it with messages to send
     	Intent i = new Intent(this, AlarmReceiver.class);
-    	i.putExtra(Constants.KEY_MEDICATION_NAME, medicationName);
-    	i.putExtra(Constants.KEY_MEDICATION_DOSAGE, medicationDosage);
-    	PendingIntent pi = PendingIntent.getBroadcast(this, Constants.COMMAND_TRIGGER_ALARM, i, PendingIntent.FLAG_UPDATE_CURRENT);
+    	i.putExtra(Constants.KEY_MEDICATION_RECORD_ID, record.id);
+    	i.putExtra(Constants.KEY_MEDICATION_RECORD, record.toString());
+    	PendingIntent pi = PendingIntent.getBroadcast(this, Constants.COMMAND_TRIGGER_ALARM, 
+    			i, PendingIntent.FLAG_UPDATE_CURRENT);
     	AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-    	//alarm.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pi);
+    	// Create a calendar in UTC and convert the start time to UTC using this
+    	Calendar c = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
+    	c.setTimeInMillis(record.startDateTime.getTimeInMillis());
+    	// Calculate the repeat interval
+    	long interval = 0;
+    	if(freqUnit.equalsIgnoreCase("Hours")) {
+    		interval = freq * 60 * 60 * 1000; 
+    	}
+    	else if(freqUnit.equalsIgnoreCase("Days")) {
+    		interval = freq * 24 * 60 * 60 * 1000;
+    	}
+    	else if(freqUnit.equalsIgnoreCase("Weeks")) {
+    		interval = freq * 7 * 24 * 60 * 60 * 1000; 
+    	}
+    	// Set the alarm
+    	alarm.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), interval, pi);
 
     	// Store form data for later viewing
     	SharedPreferences sp = getSharedPreferences(Constants.DATA_STORE, 0);
@@ -134,5 +146,4 @@ public class AddReminderActivity extends Activity {
         getMenuInflater().inflate(R.menu.activity_add_reminder, menu);
         return true;
     }
-        
 }

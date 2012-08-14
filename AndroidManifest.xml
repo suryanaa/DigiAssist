@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Author: Anitha Suryanarayan
-feedback: anitha@pdx.edu
+feedback: anitha@pdx.edu
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -108,6 +108,15 @@ feedback: anitha@pdx.edu
         <activity
             android:name=".DigiAssistHelpActivity"
             android:label="@string/title_activity_digi_assist_help" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AlarmReceiverActivity"
+            android:label="@string/title_activity_alarm_receiver" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

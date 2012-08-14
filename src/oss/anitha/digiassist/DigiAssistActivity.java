@@ -24,7 +24,6 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 
@@ -121,6 +120,12 @@ public class DigiAssistActivity extends Activity {
         checkIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
         startActivityForResult(checkIntent, Constants.COMMAND_CHECK_TTS_AVAILABILITY);
     }
+    
+    @Override
+    public void onDestroy() {
+    	tts.shutdown();
+    	super.onDestroy();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -139,10 +144,6 @@ public class DigiAssistActivity extends Activity {
 				}
 			});
     	} 
-    }
-    
-    private void showMessage(String message) {
-    	Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
     
     static void speak(String message) {

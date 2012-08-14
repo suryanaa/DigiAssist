@@ -21,19 +21,25 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
-import android.widget.Toast;
 
 public class AlarmReceiver extends BroadcastReceiver {
 
 	private static final String TAG = "AlarmReceiver";
+	static TextToSpeech tts;
+	static boolean ttsInited = false;
 	
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		Log.i(TAG, "onReceive");
 		Bundle data = intent.getExtras();
-		String name = data.getString(Constants.KEY_MEDICATION_NAME);
-		String dosage = data.getString(Constants.KEY_MEDICATION_DOSAGE);
-		Toast.makeText(context, "Time for " + name + ". Dosage is " + dosage, Toast.LENGTH_SHORT).show();
+		String id = data.getString(Constants.KEY_MEDICATION_RECORD_ID);
+		String record = data.getString(Constants.KEY_MEDICATION_RECORD);
+		Intent i = new Intent(context, AlarmReceiverActivity.class);
+		i.putExtra(Constants.KEY_MEDICATION_RECORD_ID, id);
+		i.putExtra(Constants.KEY_MEDICATION_RECORD, record);
+		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		context.startActivity(i);
 	}
 }

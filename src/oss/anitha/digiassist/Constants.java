@@ -25,6 +25,8 @@ public class Constants {
 	  static final String KEY_END_DATE = "MedicationEndDate";
 	  static final String KEY_START_TIME = "MedicationStartTime";
 	  static final String KEY_END_TIME = "MedicationEndTime";
+	  static final String KEY_MEDICATION_RECORD = "MedicationRecord";
+	  static final String KEY_MEDICATION_RECORD_ID = "MedicationRecordId";
 	  
   	  static final int COMMAND_CHECK_TTS_AVAILABILITY = 0;
 	  static final int COMMAND_ADD_REMINDER = 1;

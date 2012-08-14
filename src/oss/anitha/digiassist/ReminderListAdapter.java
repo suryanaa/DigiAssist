@@ -81,7 +81,7 @@ public class ReminderListAdapter extends ArrayAdapter<MedicationReminder> {
         	String id = entry.getKey();
         	String record = (String) entry.getValue();
         	MedicationReminder reminder = new MedicationReminder(id, record);
-        	Calendar c = Calendar.getInstance(TimeZone.getTimeZone("PST"));
+        	Calendar c = Calendar.getInstance();
         	if(c.get(Calendar.YEAR) == reminder.startDateTime.get(Calendar.YEAR) &&
         			c.get(Calendar.MONTH) == reminder.startDateTime.get(Calendar.MONTH)	&&
         			c.get(Calendar.DAY_OF_MONTH) == reminder.startDateTime.get(Calendar.DAY_OF_MONTH)) {
