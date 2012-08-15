@@ -153,6 +153,7 @@ feedback: anitha@pdx.edu
         android:layout_toRightOf="@+id/chkBoxWeightLoss"
         android:text="@string/weightGain" />
     
+    <!--  
     <CheckBox
         android:id="@+id/chkBoxOther"
         android:layout_width="wrap_content"
@@ -170,15 +171,16 @@ feedback: anitha@pdx.edu
        		android:layout_toRightOf="@+id/chkBoxOther"
             android:inputType="text" />
         <requestFocus />
-
+-->
     
     <Button 
 	  	android:id="@+id/buttonSendToDoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/chkBoxOther"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/chkBoxWeightLoss"
         android:paddingTop="10dp"
-        android:text="@string/sendToDoc"
+        android:text="@string/sendToDoc2"
         android:onClick="sendEmailToDoc" /> 
        
     <Button 

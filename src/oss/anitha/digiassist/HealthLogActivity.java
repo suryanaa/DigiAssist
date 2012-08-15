@@ -17,36 +17,32 @@
 
 package oss.anitha.digiassist;
 
-import java.util.Calendar;
-
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.SeekBar;
-import android.widget.TimePicker;
 import android.widget.Toast;
-import android.support.v4.app.NavUtils;
+import android.net.Uri;
+
 
 public class HealthLogActivity extends Activity {
-	private Button btnSave, btnCancel;
+	private Button btnSave, btnCancel, btnViewLog;
 	private EditText txtTemperature, txtBloodGlucose, txtOxygenSat, txtRespRate, txtPulRate, txtSysBP, txtDiaBP;
 	private SeekBar seekBarPainLevel;
+	private String SpreadSheetURL = "https://docs.google.com/spreadsheet/ccc?key=0AkOdMftVQLNbdG5QUkxUamotU2w1Q2ZtNThKc2lQd3c#gid=0";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_log);
         btnSave = (Button) findViewById(R.id.buttonSave);
         btnCancel = (Button) findViewById(R.id.buttonCancel);
+        btnViewLog = (Button) findViewById(R.id.buttonViewLog);
+
         seekBarPainLevel = (SeekBar) findViewById(R.id.seekBarPainlevel);
         txtTemperature = (EditText) findViewById(R.id.bodyTemperature);
         txtBloodGlucose =  (EditText) findViewById(R.id.bloodGlucose);
@@ -58,9 +54,13 @@ public class HealthLogActivity extends Activity {
         
         btnSave.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				HealthLogActivity.this.saveFormData();				
+				HealthLogActivity.this.saveFormData();
+				
+				
 			}
-		});btnCancel.setOnClickListener(new View.OnClickListener() {
+		});
+        
+        btnCancel.setOnClickListener(new View.OnClickListener() {
  			public void onClick(View v) {
  		        // Display data from store
  		        SharedPreferences sp = getSharedPreferences(Constants.STATS_STORE, 0);
@@ -78,8 +78,20 @@ public class HealthLogActivity extends Activity {
  		        		Toast.LENGTH_LONG).show();
  			}
         });
+        btnViewLog.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				goToUrl (SpreadSheetURL);
+			}
+		});
+        
     }
        
+    private void goToUrl (String url) {
+        Uri uriUrl = Uri.parse(url);
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+        startActivity(launchBrowser);
+    }
+    
     private void saveFormData() {
     	// Get form data
 	        String painLevel = seekBarPainLevel.toString();
@@ -112,6 +124,5 @@ public class HealthLogActivity extends Activity {
         getMenuInflater().inflate(R.menu.activity_medication_log, menu);
         return true;
     }
-
     
 }

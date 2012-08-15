@@ -84,6 +84,11 @@ public class AddReminderActivity extends Activity {
 				AddReminderActivity.this.saveFormData();				
 			}
 		});
+        
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+			}
+		});
     }
     
     private void saveFormData() {

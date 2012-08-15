@@ -19,11 +19,13 @@ package oss.anitha.digiassist;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.view.Menu;
 import android.widget.ExpandableListView;
  
 import java.util.ArrayList;
- 
+import java.util.Map;
+import java.util.Random;
 
 public class MedicationSupplyActivity extends Activity {
 	private ExpandableListView mExpandableList;
@@ -35,58 +37,22 @@ public class MedicationSupplyActivity extends Activity {
         mExpandableList = (ExpandableListView)findViewById(R.id.expandable_list);
         
         ArrayList<Parent> arrayParents = new ArrayList<Parent>();
-        ArrayList<String> arrayChildren = new ArrayList<String>();
-        ArrayList<String> arrayChildrenDal = new ArrayList<String>();
-        ArrayList<String> arrayChildrenHep = new ArrayList<String>();
-        ArrayList<String> arrayChildrenEno = new ArrayList<String>();
-        ArrayList<String> arrayChildrenTin = new ArrayList<String>();
-        ArrayList<String> arrayChildrenWar = new ArrayList<String>();
+        ArrayList<String> medicines = getCurrentMedicines();
+        Random rand = new Random();
 
-        Parent parentDal = new Parent();
-        parentDal.setTitle("Medication : " + "Dalteparin");
-        arrayChildrenDal.add("Pills Remaining : " + "30");
-        parentDal.setArrayChildren(arrayChildrenDal);
-        arrayParents.add(parentDal);
-         
-        Parent parentExo = new Parent();
-        parentExo.setTitle("Medication : " + "Enoxaparin");
-        arrayChildrenEno.add("Pills Remaining : " + "10");
-        parentExo.setArrayChildren(arrayChildrenEno);
-        arrayParents.add(parentExo);
+        for(int i = 0; i < medicines.size(); i++) {
+            Parent p = new Parent();
+            p.setTitle(getString(R.string.view_label_medicine) + " " + medicines.get(i));
+            ArrayList<String> children = new ArrayList<String>();
+            int pillsRem = rand.nextInt(100);
+            children.add(getString(R.string.pills_remaining) + " " + pillsRem);
+            if(pillsRem <= 10) {
+                children.add(getString(R.string.refill_required) + " " + getString(R.string.yes));
+            }
+            p.setArrayChildren(children);
+            arrayParents.add(p);
+        }
         
-        
-        Parent parentHep = new Parent();
-        parentHep.setTitle("Medication : " + "Heparin");
-        arrayChildrenHep.add("Pills Remaining : " + "7");
-        arrayChildrenHep.add("Refill Required : " + "Yes");
-        parentHep.setArrayChildren(arrayChildrenHep);
-        arrayParents.add(parentHep);
-        
-
-        Parent parentTin = new Parent();
-        parentTin.setTitle("Medication : " + "Tinzaparin");
-        arrayChildrenTin.add("Pills Remaining : " + "15");
-        parentTin.setArrayChildren(arrayChildrenTin);
-        arrayParents.add(parentTin);
-        
-        Parent parentWar = new Parent();
-        parentWar.setTitle("Medication : " + "Warfarin");
-        arrayChildrenWar.add("Pills Remaining : " + "20");
-        parentWar.setArrayChildren(arrayChildrenWar);
-        arrayParents.add(parentWar);
-        
-        //here we set the parents and the children
-        /*for (int i = 0; i < 10; i++){
-            //for each "i" create a new Parent object to set the title and the children
-            Parent parent1 = new Parent();
-            parent1.setTitle("Medication Name " + "Dalteparin");
-            arrayChildren.add("Details " + i);
-            parent1.setArrayChildren(arrayChildren);
- 
-            //in this array we add the Parent object. We will use the arrayParents at the setAdapter
-            arrayParents.add(parent1);
-        }*/
- 
         //sets the adapter that provides data to the list.
         mExpandableList.setAdapter(new MyCustomAdapter(MedicationSupplyActivity.this,arrayParents));
     }
@@ -97,5 +63,16 @@ public class MedicationSupplyActivity extends Activity {
         return true;
     }
 
-    
+    private ArrayList<String> getCurrentMedicines() {
+        SharedPreferences sp = getSharedPreferences(Constants.DATA_STORE, 0);
+        ArrayList<String> medicines = new ArrayList<String>();
+        Map<String, ?> reminders = sp.getAll();
+        for(Map.Entry<String, ?> entry : reminders.entrySet()) {
+        	String id = entry.getKey();
+        	String record = (String) entry.getValue();
+        	MedicationReminder reminder = new MedicationReminder(id, record);
+        	medicines.add(reminder.name);
+        }
+        return medicines;
+    }
 }

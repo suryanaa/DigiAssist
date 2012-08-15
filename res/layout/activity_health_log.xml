@@ -699,6 +699,17 @@ feedback: anitha@pdx.edu
         android:text="@string/cancel"
         android:onClick="refreshScreen" /> 
     
+	
+	<Button 
+	  	android:id="@+id/buttonViewLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/buttonSave"
+        android:layout_toRightOf="@+id/buttonCancel"
+        android:paddingTop="10dp"
+        android:text="@string/viewLog"
+        android:onClick="refreshScreen" /> 
+    
  </RelativeLayout>
 	
 

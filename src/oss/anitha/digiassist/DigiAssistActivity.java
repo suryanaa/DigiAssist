@@ -69,7 +69,7 @@ public class DigiAssistActivity extends Activity {
         ImageView imgSendSymptoms = (ImageView) findViewById(R.id.send_symptoms);
         imgSendSymptoms.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				speak(getString(R.string.sendToDoc));
+				speak(getString(R.string.sendToDoc2));
 				DigiAssistActivity.this.startActivityForResult(
 						new Intent(DigiAssistActivity.this, SendSymptomsActivity.class), 
 						Constants.COMMAND_SEND_SYMPTOMS);

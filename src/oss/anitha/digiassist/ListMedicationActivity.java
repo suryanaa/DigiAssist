@@ -17,31 +17,50 @@
 
 package oss.anitha.digiassist;
 
-import java.util.StringTokenizer;
+import java.util.ArrayList;
+import java.util.Map;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.Window;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.support.v4.app.NavUtils;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class ListMedicationActivity extends Activity {
 
+	private static final String URL_PREFIX = "http://www.drugs.com/";
+	private static final String URL_SUFFIX = ".html";
 	String strTratamiento;
 
 	public void onCreate(Bundle icicle) 
 	{
 		super.onCreate(icicle);
         setContentView(R.layout.activity_list_medication);
+        ArrayList<String> medicines = getCurrentMedicines();
+        LinearLayout layout = (LinearLayout) findViewById(R.id.layout_medicine_info);
+        for(int i = 0; i < medicines.size(); i++) {
+        	final String medicine = medicines.get(i);
+        	Button b = new Button(this);
+        	b.setText(medicine);
+        	b.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+        	b.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					goToUrl(URL_PREFIX + medicine + URL_SUFFIX);
+				}
+        	});
+        	layout.addView(b);
+        }
 	}
-
+	
+	public void goToPage(View view) {
+		goToUrl(URL_PREFIX + URL_SUFFIX);
+	}
+/*
     public void goToDa (View view) {
         goToUrl ( "http://www.drugs.com/mtm/dalteparin.html");
     }
@@ -61,7 +80,7 @@ public class ListMedicationActivity extends Activity {
     public void goToWa (View view) {
         goToUrl ( "http://www.drugs.com/cdi/warfarin.html");
     }
-
+*/
     private void goToUrl (String url) {
         Uri uriUrl = Uri.parse(url);
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
@@ -69,19 +88,22 @@ public class ListMedicationActivity extends Activity {
     }
 	
 	
-	
-    
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_lsit_medication, menu);
         return true;
     }
     
-    
-    
-    
-    
-
-    
+    private ArrayList<String> getCurrentMedicines() {
+        SharedPreferences sp = getSharedPreferences(Constants.DATA_STORE, 0);
+        ArrayList<String> medicines = new ArrayList<String>();
+        Map<String, ?> reminders = sp.getAll();
+        for(Map.Entry<String, ?> entry : reminders.entrySet()) {
+        	String id = entry.getKey();
+        	String record = (String) entry.getValue();
+        	MedicationReminder reminder = new MedicationReminder(id, record);
+        	medicines.add(reminder.name);
+        }
+        return medicines;
+    }
 }

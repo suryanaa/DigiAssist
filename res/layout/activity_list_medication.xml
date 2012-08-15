@@ -18,11 +18,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Author: Anitha Suryanarayan
 feedback: anitha@pdx.edu
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_medicine_info"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
     <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/select" />
-    <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Dalteparin" android:autoLink="web" android:clickable="true" android:id="@+id/button_da" android:onClick="goToDa"></Button>
+    <!--  <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Dalteparin" android:autoLink="web" android:clickable="true" android:id="@+id/button_da" android:onClick="goToDa"></Button>
     <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Enoxaparin" android:autoLink="web" android:clickable="true" android:id="@+id/button_en" android:onClick="goToEn"></Button>
     <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Heparin" android:autoLink="web" android:clickable="true" android:id="@+id/button_he" android:onClick="goToHe"></Button>
     <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Tinzaparin" android:autoLink="web" android:clickable="true" android:id="@+id/button_ti" android:onClick="goToTi"></Button>
-    <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Warfarin" android:autoLink="web" android:clickable="true" android:id="@+id/button_wa" android:onClick="goToWa"></Button>
+    <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Warfarin" android:autoLink="web" android:clickable="true" android:id="@+id/button_wa" android:onClick="goToWa"></Button> -->
    </LinearLayout>

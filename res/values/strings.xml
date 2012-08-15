@@ -57,7 +57,7 @@ feedback: anitha@pdx.edu
     <string name="weightGain">Weight Gain</string>
     <string name="other">Other</string>
     <string name="details">More Details</string>
-    <string name="sendToDoc">Send to my doctor</string>
+    <string name="sendToDoc2">Send to my doctor</string>
     <string name="view_label_medicine">Medicine:</string>
     <string name="view_label_dosage">Dosage:</string>
     <string name="view_label_start">Time:</string>
@@ -68,6 +68,11 @@ feedback: anitha@pdx.edu
     <string name="dismiss">Dismiss</string>
     <string name="time_for_med">Time for your medicine</string>
     <string name="dosage_is">The dosage is</string>
+    <string name="viewLog">View Log</string>
+    <string name="pills_remaining">Pills Remaining:</string>
+    <string name="refill_required">Refill Required:</string>
+    <string name="yes">Yes</string>
+    
     
     <string-array name="medication_frequency_num">
         <item>1</item>
@@ -95,7 +100,7 @@ feedback: anitha@pdx.edu
     <string name="medication_frequency_unit_prompt">Days</string>
     <string name="title_activity_lsit_medication">List Medication Details</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_view_calendar">View Today\'s Medication Calendar</string>
+    <string name="title_activity_view_calendar">View Todays Medication Calendar</string>
     <string name="title_activity_send_symptoms">Send Symptoms To Doctor</string>
     <string name="title_activity_medication_supply">Medication Supplies</string>
     <string name="medication_supplies">Medication Supplies</string>
