@@ -93,36 +93,8 @@ NOTE: The application is still under testing phase so please let me know through
 provided above if some feature from currently working list is not working for you.
 User submitted remedies feature won't be accessible to users as server needed for same is not yet published.
 
-Platform:
----------
-Android device with version (2.2). Testing this application on newer version of android 
-is in progress.I will update the information as soon as the testing is completed.
-
-Installation:
--------------
-Please read "INSTALL.txt" located at below location:
-
-https://github.com/suryanaa/DigiAssist
-
-for complete instructions on how to install and use this application by users(Developer or EndUser). 
-
-
-Step-by-Step guide on how to Use the application:
--------------------------------------------------
-
-
 
 License Information:
 --------------------
 This application is licensed under GPLv3. Please read "LICENSE.txt" for full version of the license terms 
 and conditions located at: https://github.com/suryanaa/DigiAssist
-
-Attributions:
--------------
-I am very grateful to all the people who have done the hardwork to create images & write code samples.
-
- 
-FOR CODE SAMPLES:
-
-http://developer.android.com/index.html
-http://www.helloandroid.com/tutorials/connecting-mysql-database
