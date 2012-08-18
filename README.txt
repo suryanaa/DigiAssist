@@ -1,5 +1,5 @@
 /*******************************************************************
-* Copyright© 2012 Anitha Suryanarayan 
+* Copyrightï¿½ 2012 Anitha Suryanarayan 
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or
@@ -98,3 +98,7 @@ License Information:
 --------------------
 This application is licensed under GPLv3. Please read "LICENSE.txt" for full version of the license terms 
 and conditions located at: https://github.com/suryanaa/DigiAssist
+
+Icons and images from www.iconarchive.com. 
+View License information - http://www.iconarchive.com/icons/aha-soft/medical/license.txt
+http://creativecommons.org/licenses/by-nc-nd/3.0/legalcode
